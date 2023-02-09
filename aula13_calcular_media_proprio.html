@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Calcular Media</h1>
+</body>
+
+<script>
+    var arr_notas = [0, 1, 6, 10]
+    arr_notas.every(function(el){
+        return el > 0;
+    })
+
+    function calcularMedia(arr){
+        var sum = 0
+        var bool_array = arr.every(function(el){
+            return el > 0;
+        })
+
+        if (!bool_array){
+            return 'reprovado'
+        }
+
+        arr.forEach(function(value){
+            sum += value
+        });
+        return sum / arr.length 
+    }
+
+    console.log(calcularMedia([6, 6, 8]))
+</script>
+
+</html>

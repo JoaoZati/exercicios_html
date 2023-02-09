@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Calcular Aniversario</h1>
+</body>
+
+<script>
+    function getProximoAniversario(date_av, date_today){
+        var this_year = date_today.getFullYear()
+        date_av.setYear(this_year)
+
+        if (date_av < date_today) {
+            date_av.setYear(this_year + 1);
+        }
+
+        return date_av
+    }
+    
+    function calcularDiasAniversario(str_aniversario){
+        var date_aniversario = new Date(str_aniversario);
+        var date_atual = new Date()
+        
+        var date_proximo_aniversario = getProximoAniversario(date_aniversario, date_atual);
+        var date_diferenca = date_proximo_aniversario.getTime() - date_atual.getTime()
+
+        return Math.ceil(date_diferenca / (1000 * 3600 * 24));
+    };
+
+    console.log(calcularDiasAniversario('1999/01/29'))
+    console.log(calcularDiasAniversario('1994/04/20'))
+</script>
+
+</html>

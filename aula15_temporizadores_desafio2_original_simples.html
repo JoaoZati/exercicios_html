@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        
+        
+    </head>
+    <body>
+        <h1>Javascript Completo</h1>
+        
+        <input type="text" id="cronometro" value="0">
+        <button id="iniciar">Iniciar</button>
+        <button id="pausar">Pausar</button>
+        <button id="parar">Parar</button>
+        
+        <script>
+            
+            (function(){
+                var intervalID;
+
+                var $cronometro = document.querySelector('#cronometro');
+                var $iniciar = document.querySelector('#iniciar');
+                var $pausar = document.querySelector('#pausar');
+                var $parar = document.querySelector('#parar');
+
+                var segundo = 0;
+
+                function addSegundo(){
+                    $cronometro.value = ++segundo;
+                };
+
+                function iniciar(){
+                    intervalID = setInterval(addSegundo, 1000);
+                };
+
+                function pausar(){
+                    intervalID = clearInterval(intervalID);
+                };
+
+                function parar(){
+                    intervalID = clearInterval(intervalID);
+                    segundo = 0;
+                    $cronometro.value = segundo;
+                };
+
+                $iniciar.addEventListener('click', iniciar);
+                $pausar.addEventListener('click', pausar);
+                $parar.addEventListener('click', parar);
+            })()
+            
+        </script>
+    </body>
+</html>

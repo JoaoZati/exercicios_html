@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Teste arrays js</h1>
+</body>
+
+<script type="text/javascript">
+    var arr = ['a', 1, 2, 3]
+
+    var boolSohNumeros = arr.every(function(el){
+        return typeof el === "number";
+    })
+
+    console.log(boolSohNumeros)
+
+    var boolTemNumeros = arr.some(function(el){
+        return typeof el === "number";
+    })
+
+    console.log(boolTemNumeros)
+
+    var numeros = arr.filter(function(el, i, arr){
+        return typeof el === 'number';
+    })
+
+    console.log(numeros)
+
+    arr.forEach(function(el, i, arr){
+        console.log(`el -> ${el} | i -> ${i} | -> arr -> ${arr}`)
+    })
+
+    console.log(arr.indexOf('a'))
+    console.log(arr.indexOf(1, 3))
+</script>
+
+
+</html>
